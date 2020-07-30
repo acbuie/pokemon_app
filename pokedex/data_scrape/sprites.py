@@ -2,45 +2,15 @@ import requests
 import re
 from bs4 import BeautifulSoup
 
-from utility import StopWatch
-from utility import find_substring
-from utility import make_soup
+from pokedex.common.utility import StopWatch
+from pokedex.common.utility import find_substring
+from pokedex.common.utility import make_soup
 
-class Scrape_Master:
-    """
-    Class from which all other methods will inherit. Experimenting with class 
-    inheritance. 
-    """
-    pass
+from pokedex.common.constants import POKEMONDB_URL, SEREBII_URL
 
-# All other data must come from serebii.net, pokemondb.net doesn't like scrapers
-class Scrape_Sprites:
+class Sprites:
     """
-    The sprites may be scraped from pokemondb.net. 
-    """
-    pass
-
-class Scrape_Pokemon:
-    """
-    Scrapes the pokemon data
-    """
-    pass
-
-class Scrape_Moves:
-    """
-    Scrapes the moves
-    """
-    pass
-
-class Scrape_Items:
-    """
-    Scrapes the items
-    """
-    pass
-
-class ScrapingMethods:
-    """
-    Class for handling scraping (i.e. updating) the data pulled from PokemonDB. 
+    Class for updating the data pulled from PokemonDB. 
     Instantiate to populate necessary urls. Each method scrapes some sort of 
     information from the site, and should be run sequentially. 
     """
@@ -191,8 +161,7 @@ if __name__ == "__main__":
 
     t = StopWatch()
     
-    scraper = ScrapingMethods(POKEMONDB_URL)
-
+    scraper = Sprites(POKEMONDB_URL)
     scraper.scrape_name()
 
     t.start()
