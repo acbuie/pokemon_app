@@ -6,11 +6,11 @@ Ultimate goal is to write my own SQL database for storing the data, which would 
 
 ## Requirements
 
-Currently, the web scraping is done with BeautifulSoup4 and Requests. 
+Currently, the web scraping is done using BeautifulSoup4 and Requests. 
 
 ## Running the program
 
-On a mac: 
+On MacOS: 
 ```
     python3 -m pokedex
 ```
